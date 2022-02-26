@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">KotolinPractice</string>
+
+    <!-- MainActivity -->
+    <string name="start_fragment">フラグメント起動</string>
+    <string name="start_webview">WebView起動</string>
+    <string name="send_intent">インテント送信</string>
+    <string name="hint">Send Message</string>
+    <string name="start_http">HTTP通信開始</string>
+    <string name="send_push">プッシュ通知送信</string>
+    <string name="default_channel">default_channel</string>
+    <string name="channel_description">channel_description</string>
+
+    <!-- FragmentLaunchActivity -->
+    <string name="samplefragment">フラグメントテストページ</string>
+
+
+    <string name="message_received">Message Received</string>
+    <string name="editText_hint">Enter Your Message Here</string>
+    <string name="button_second">Reply</string>
+    <string name="editText_second">Entetr Your Reply Here</string>
+
+</resources>
