@@ -5,11 +5,13 @@ import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kotlinpractice.R
 import com.example.kotlinpractice.databinding.ActivityWebviewBinding
 
 class WebViewActivity:AppCompatActivity() {
-
+    /**
+     * private variable
+     */
+    private val TAG: String = "WebViewActivity"
     private lateinit var binding: ActivityWebviewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
