@@ -1,17 +1,25 @@
 package com.example.kotlinpractice.activity
 
 import android.os.Bundle
+import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlinpractice.R
+import com.example.kotlinpractice.databinding.ActivityWebviewBinding
 
 class WebViewActivity:AppCompatActivity() {
+
+    private lateinit var binding: ActivityWebviewBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_webview)
-        val webView: WebView = findViewById(R.id.webview)
+        binding = ActivityWebviewBinding.inflate(layoutInflater)
+        val view: View = binding.root
+        setContentView(view)
+
+        val webView: WebView = binding.webview
         webView.webViewClient = WebViewClient()
         webView.settings.javaScriptEnabled = true
 
