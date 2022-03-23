@@ -19,5 +19,7 @@
     <string name="editText_hint">Enter Your Message Here</string>
     <string name="button_second">Reply</string>
     <string name="editText_second">Entetr Your Reply Here</string>
+    <string name="excutor">Excutor実行</string>
+    <string name="activity_async">非同期処理画面</string>
 
 </resources>

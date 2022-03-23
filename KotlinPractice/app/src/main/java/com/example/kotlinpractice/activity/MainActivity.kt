@@ -6,13 +6,11 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.example.kotlinpractice.R
 import com.example.kotlinpractice.databinding.ActivityMainBinding
+import com.example.kotlinpractice.utility.HttpUtility
 import com.example.kotlinpractice.utility.PushNotification
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import java.net.HttpURLConnection
-import java.net.URL
 
 class MainActivity : AppCompatActivity() {
     /**
@@ -23,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i(TAG, "onCreate")
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view: View = binding.root
@@ -32,10 +31,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setListeners() {
-        binding.buttonSendIntent.setOnClickListener {
-
-        }
-
         binding.buttonFragmentStart.setOnClickListener {
             startActivity(Intent(applicationContext, FragmentLaunchActivity::class.java))
         }
@@ -44,10 +39,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(applicationContext, WebViewActivity::class.java))
         }
 
+        binding.buttonSendIntent.setOnClickListener {
+            val intent: Intent = Intent(applicationContext, ReceiveIntentActivity::class.java)
+            intent.putExtra("SEND_TEXT", binding.edittextMessage.text.toString())
+            startActivity(intent)
+        }
+
         binding.buttonHttpRequest.setOnClickListener {
+            val hU: HttpUtility = HttpUtility()
             lifecycleScope.launch {
                 try {
-                    startHttpRequest()
+                    hU.startHttpRequest()
                 } catch (e: Exception) {
                     Log.i("エラー", e.toString())
                 }
@@ -57,21 +59,9 @@ class MainActivity : AppCompatActivity() {
         binding.buttonSendPush.setOnClickListener {
             PushNotification(applicationContext).send()
         }
-    }
 
-    private suspend fun startHttpRequest() {
-        val url = URL("https://www.google.com/")
-        return withContext(Dispatchers.IO) {
-            (url.openConnection() as? HttpURLConnection)?.run {
-                requestMethod = "GET"
-                doOutput = true
-                doInput = true
-
-                Log.i("HTTP", "responseCode = ${responseCode}")
-                Log.i("HTTP", "HttpURLConnection Success")
-                return@withContext
-            }
-            Log.i("HTTP", "Cannot open HttpURLConnection")
+        binding.buttonAsync.setOnClickListener {
+            startActivity(Intent(applicationContext, AsyncActivity::class.java))
         }
     }
 }

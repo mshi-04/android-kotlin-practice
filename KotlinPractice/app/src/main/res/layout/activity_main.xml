@@ -74,6 +74,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="@string/send_push" />
+
+            <Button
+                android:id="@+id/button_async"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:text="@string/activity_async"/>
+
         </LinearLayout>
     </ScrollView>
 
