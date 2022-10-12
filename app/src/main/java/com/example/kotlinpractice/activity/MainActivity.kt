@@ -61,5 +61,9 @@ class MainActivity : AppCompatActivity() {
         binding.buttonAsync.setOnClickListener {
             startActivity(Intent(applicationContext, AsyncActivity::class.java))
         }
+
+        binding.buttonApi.setOnClickListener {
+            startActivity(Intent(applicationContext, WeatherApiActivity::class.java))
+        }
     }
 }

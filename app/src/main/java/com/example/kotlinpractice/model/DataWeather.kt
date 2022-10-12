@@ -1,19 +1,15 @@
 package com.example.kotlinpractice.model
 
-data class RootJson(val dataBody: List<DataBody>)
-
-data class DataBody(
+data class WeatherBody(
     val publishingOffice: String,
     val reportDatetime: String,
-    val timeSeriesList: List<TimeSeries>
+    val timeSeries: List<TimeSeries>
 )
 
 data class TimeSeries(
-    var timeDefines: List<TimeDefine>,
+    var timeDefines: List<String>,
     var areas: List<Areas>
 )
-
-data class TimeDefine(var timeStampString: String)
 
 data class Areas(
     var area: Area,

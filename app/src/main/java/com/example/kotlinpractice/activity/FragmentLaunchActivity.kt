@@ -11,7 +11,7 @@ class FragmentLaunchActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment_launch)
 
-        val fragment: SampleFragment = SampleFragment()
+        val fragment = SampleFragment()
 
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.container, fragment)

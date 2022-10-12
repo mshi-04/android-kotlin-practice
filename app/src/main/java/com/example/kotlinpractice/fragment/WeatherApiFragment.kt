@@ -9,13 +9,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlinpractice.R
+import com.example.kotlinpractice.adapter.WeatherAdapter
 import com.example.kotlinpractice.databinding.FragmentWeatherApiBinding
 import com.example.kotlinpractice.viewmodel.WeatherApiViewModel
 
 class WeatherApiFragment : Fragment() {
 
     private lateinit var binding: FragmentWeatherApiBinding
+    private var viewModelAdapter: WeatherAdapter? = null
 
     private val viewModel: WeatherApiViewModel by lazy {
         val activity = requireNotNull(this.activity) {
@@ -25,20 +28,11 @@ class WeatherApiFragment : Fragment() {
             .get(WeatherApiViewModel::class.java)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        viewModel.weathers.observe(viewLifecycleOwner, {
-            it?.apply {
-
-            }
-        })
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         super.onCreateView(inflater, container, savedInstanceState)
 
         binding = DataBindingUtil.inflate(
@@ -48,17 +42,37 @@ class WeatherApiFragment : Fragment() {
             false
         )
 
-        binding.viewModel = viewModel
-
-        binding.weatherRefreshButton.setOnClickListener {
-            getWeatherData()
-        }
-
         viewModel.eventNetworkError.observe(viewLifecycleOwner, Observer<Boolean> {
             if (it) onNetworkError()
         })
 
+        initView()
+
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.weathers.observe(viewLifecycleOwner) {
+            it?.apply {
+                viewModelAdapter?.data = it
+            }
+        }
+    }
+
+    fun initView() {
+        binding.setLifecycleOwner(viewLifecycleOwner)
+        binding.viewModel = viewModel
+        viewModelAdapter = WeatherAdapter()
+
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = viewModelAdapter
+        }
+
+        binding.weatherRefreshButton.setOnClickListener {
+            getWeatherData()
+        }
     }
 
     private fun getWeatherData() {
@@ -71,7 +85,4 @@ class WeatherApiFragment : Fragment() {
             viewModel.onNetworkErrorShown()
         }
     }
-
-
-
 }

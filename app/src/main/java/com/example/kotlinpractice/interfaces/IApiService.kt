@@ -1,10 +1,10 @@
 package com.example.kotlinpractice.interfaces
 
-import com.example.kotlinpractice.model.RootJson
+import com.example.kotlinpractice.model.WeatherBody
 import retrofit2.Call
 import retrofit2.http.GET
 
 interface IApiService {
-    @GET("")
-    fun apiGet(): Call<RootJson>
+    @GET("130000.json")
+    fun getService(): Call<Array<WeatherBody>>
 }

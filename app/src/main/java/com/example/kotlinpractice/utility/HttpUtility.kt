@@ -2,7 +2,6 @@ package com.example.kotlinpractice.utility
 
 import android.util.Log
 import com.example.kotlinpractice.interfaces.IApiService
-import com.google.gson.GsonBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
@@ -32,11 +31,7 @@ object HttpUtility {
     fun createRetrofit(url: String): IApiService {
         val retrofit: Retrofit = Retrofit
             .Builder()
-            .addConverterFactory(
-                GsonConverterFactory.create(
-                    GsonBuilder().serializeNulls().create()
-                )
-            )
+            .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(url)
             .build()
 

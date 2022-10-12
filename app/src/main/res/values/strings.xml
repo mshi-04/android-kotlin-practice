@@ -21,7 +21,8 @@
     <string name="editText_second">Entetr Your Reply Here</string>
     <string name="excutor">Excutor実行</string>
     <string name="activity_async">非同期処理画面</string>
-    <string name="weather_url">https://www.jma.go.jp/bosai/forecast/data/forecast/130000.json</string>
+    <string name="weather_url">https://www.jma.go.jp/bosai/forecast/data/forecast/</string>
     <string name="refresh">更新</string>
+    <string name="api_connect">API通信</string>
 
 </resources>
