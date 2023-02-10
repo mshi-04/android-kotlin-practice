@@ -58,6 +58,14 @@
                 android:value=".activity.MainActivity" />
         </activity>
 
+        <activity android:name=".activity.ViewPagerActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+
+        </activity>
+
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="true" />

@@ -65,5 +65,9 @@ class MainActivity : AppCompatActivity() {
         binding.buttonApi.setOnClickListener {
             startActivity(Intent(applicationContext, WeatherApiActivity::class.java))
         }
+
+        binding.buttonViewpager.setOnClickListener {
+            startActivity(Intent(applicationContext, ViewPagerActivity::class.java))
+        }
     }
 }

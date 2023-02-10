@@ -7,6 +7,7 @@ import com.example.kotlinpractice.databinding.ActivityAsyncBinding
 import com.example.kotlinpractice.viewmodel.AsyncViewModel
 
 class AsyncActivity : AppCompatActivity() {
+
     private lateinit var viewModel: AsyncViewModel
     private lateinit var binding: ActivityAsyncBinding
 
@@ -26,6 +27,4 @@ class AsyncActivity : AppCompatActivity() {
             viewModel.executorStart()
         }
     }
-
-
 }
