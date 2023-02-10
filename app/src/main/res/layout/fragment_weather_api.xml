@@ -5,6 +5,7 @@
     tools:context=".fragment.WeatherApiActivity">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.kotlinpractice.viewmodel.WeatherApiViewModel" />

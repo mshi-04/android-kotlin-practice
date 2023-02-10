@@ -25,5 +25,6 @@
     <string name="refresh">更新</string>
     <string name="api_connect">API通信</string>
     <string name="viewpager">ViewPager</string>
+    <string name="sharedpreferences">SharedPreferences</string>
 
 </resources>

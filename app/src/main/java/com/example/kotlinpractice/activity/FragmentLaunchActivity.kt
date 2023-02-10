@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.kotlinpractice.R
 import com.example.kotlinpractice.fragment.SampleFragment
 
-class FragmentLaunchActivity: AppCompatActivity() {
+class FragmentLaunchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

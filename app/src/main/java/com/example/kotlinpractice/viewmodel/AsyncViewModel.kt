@@ -8,7 +8,7 @@ import java.util.concurrent.Executors
 class AsyncViewModel : ViewModel() {
 
     public fun executorStart() {
-        val executor:ExecutorService = Executors.newSingleThreadExecutor()
+        val executor: ExecutorService = Executors.newSingleThreadExecutor()
 
         executor.execute {
             Log.i("####", "サブスレッド")

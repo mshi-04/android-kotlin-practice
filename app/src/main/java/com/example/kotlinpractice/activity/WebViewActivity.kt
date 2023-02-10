@@ -7,7 +7,7 @@ import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlinpractice.databinding.ActivityWebviewBinding
 
-class WebViewActivity:AppCompatActivity() {
+class WebViewActivity : AppCompatActivity() {
     /**
      * private variable
      */

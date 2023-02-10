@@ -32,7 +32,7 @@ class WeatherRepository(private val database: WeatherDatabase) {
         }
     }
 
-    private fun analyzeJson(response: Response<Array<WeatherBody>>) : List<DatabaseWeather> {
+    private fun analyzeJson(response: Response<Array<WeatherBody>>): List<DatabaseWeather> {
         val body = response.body()
         val dataBody = body?.get(0)
 

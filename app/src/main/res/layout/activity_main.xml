@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,10 +17,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:paddingStart="15dp"
-            android:paddingEnd="15dp"
             android:paddingTop="15dp"
-            android:orientation="vertical">
+            android:paddingEnd="15dp">
 
             <Button
                 android:id="@+id/button_fragment_start"
@@ -35,8 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:text="@string/start_webview"
-                android:textAllCaps="false" />
+                android:text="@string/start_webview" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -56,8 +54,8 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="10dp"
                     android:hint="@string/hint"
-                    android:inputType="text"
-                    android:importantForAutofill="no" />
+                    android:importantForAutofill="no"
+                    android:inputType="text" />
             </LinearLayout>
 
             <Button
@@ -80,21 +78,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20sp"
-                android:text="@string/activity_async"/>
+                android:text="@string/activity_async" />
 
             <Button
                 android:id="@+id/button_api"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20sp"
-                android:text="@string/api_connect"/>
+                android:text="@string/api_connect" />
 
             <Button
                 android:id="@+id/button_viewpager"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20sp"
-                android:text="@string/viewpager"/>
+                android:text="@string/viewpager" />
+
+            <Button
+                android:id="@+id/button_sharedpreferences"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:text="@string/sharedpreferences" />
 
         </LinearLayout>
     </ScrollView>

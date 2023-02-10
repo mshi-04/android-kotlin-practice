@@ -33,7 +33,8 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
 
     override fun getItemCount() = data.size
 
-    class ViewHolder(val viewDataBinding: ListItemWeatherBinding) : RecyclerView.ViewHolder(viewDataBinding.root)
+    class ViewHolder(val viewDataBinding: ListItemWeatherBinding) :
+        RecyclerView.ViewHolder(viewDataBinding.root)
 }
 
 
