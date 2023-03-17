@@ -69,5 +69,9 @@ class MainActivity : AppCompatActivity() {
         binding.buttonViewpager.setOnClickListener {
             startActivity(Intent(applicationContext, ViewPagerActivity::class.java))
         }
+
+        binding.buttonSharedpreferences.setOnClickListener{
+            startActivity(Intent(applicationContext, SharedPreferencesActivity::class.java))
+        }
     }
 }
