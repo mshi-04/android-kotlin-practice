@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonSendIntent.setOnClickListener {
-            val intent: Intent = Intent(applicationContext, ReceiveIntentActivity::class.java)
+            val intent = Intent(applicationContext, ReceiveIntentActivity::class.java)
             intent.putExtra("SEND_TEXT", binding.edittextMessage.text.toString())
             startActivity(intent)
         }

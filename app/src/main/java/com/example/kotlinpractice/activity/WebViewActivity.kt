@@ -11,7 +11,7 @@ class WebViewActivity : AppCompatActivity() {
     /**
      * private variable
      */
-    private val TAG: String = "WebViewActivity"
+    private val TAG = "WebViewActivity"
     private lateinit var binding: ActivityWebviewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
