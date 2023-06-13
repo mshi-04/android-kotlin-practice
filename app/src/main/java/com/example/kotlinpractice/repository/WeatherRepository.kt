@@ -1,7 +1,7 @@
 package com.example.kotlinpractice.repository
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.map
+import androidx.lifecycle.Transformations
 import com.example.kotlinpractice.database.WeatherDatabase
 import com.example.kotlinpractice.model.DatabaseWeather
 import com.example.kotlinpractice.model.WeatherBody
