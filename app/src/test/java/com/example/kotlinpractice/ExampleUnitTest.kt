@@ -1,5 +1,6 @@
 package com.example.kotlinpractice
 
+import com.example.kotlinpractice.utility.StringUtils
 import org.junit.Test
 
 /**
@@ -9,7 +10,12 @@ import org.junit.Test
  */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-
+    fun capitalizeFirstLetter_isCorrect() {
+        StringUtils.capitalizeFirstLetter("")
+        StringUtils.capitalizeFirstLetter("abc")
+        StringUtils.capitalizeFirstLetter("Def")
+        StringUtils.capitalizeFirstLetter("gHi")
+        StringUtils.capitalizeFirstLetter("jkL")
+        StringUtils.capitalizeFirstLetter("こんにちは")
     }
 }
