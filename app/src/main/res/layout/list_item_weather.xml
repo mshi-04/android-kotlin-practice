@@ -8,7 +8,7 @@
 
         <variable
             name="weather"
-            type="com.example.kotlinpractice.model.DatabaseWeather" />
+            type="com.practice.myapplication.model.DatabaseWeather" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,6 +1,6 @@
 package com.example.kotlinpractice
 
-import com.example.kotlinpractice.utility.StringUtils
+import com.practice.myapplication.utility.StringUtils
 import org.junit.Test
 
 /**
